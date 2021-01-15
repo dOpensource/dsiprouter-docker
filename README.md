@@ -9,12 +9,15 @@ Docker is required in order to run the containers.
 * [Linux](https://docs.docker.com/linux/started/)
 
 ## Installation
-*The dSIPRouter Docker images can be run using Docker Compose.
+The dSIPRouter Docker images can be run using Docker Compose.
 
 ### Install dSIPRouter using Docker Compose
 Using Docker Compose makes configuring, installing, and upgrading dSIPRouter easy:
 1. [Install Docker Compose](https://docs.docker.com/compose/install/)
 2. Change directory to the dsiprouter docker-compose.yml file.
+      
       Command: cd dsiprouter-docker/docker-compose.yml
+      
 3. Then install dSIProuter using the following command:
+
       Command: docker-compose up -d
