@@ -16,8 +16,8 @@ Using Docker Compose makes configuring, installing, and upgrading dSIPRouter eas
 1. [Install Docker Compose](https://docs.docker.com/compose/install/)
 2. Change directory to the dsiprouter docker-compose.yml file.
       
-            Command: cd dsiprouter-docker/docker-compose.yml
+            cd dsiprouter-docker/docker-compose.yml
       
 3. Then install dSIProuter using the following command:
 
-            Command: docker-compose up -d
+            docker-compose up -d
