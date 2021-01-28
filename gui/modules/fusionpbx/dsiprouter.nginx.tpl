@@ -1,5 +1,5 @@
     upstream fusionpbx {
-	      ##SERVERLIST##  
+	##SERVERLIST##  
   }
 
 
