@@ -1,0 +1,197 @@
+{% extends 'table_layout.html' %}
+
+{% block title %}Certificates{% endblock %}
+
+{% block custom_css %}
+ {{ link_tag('certificates') }}
+{% endblock %}
+
+{% block table_headers %}
+  <div>
+    <h3>Certificates</h3>
+  </div>
+
+  <div class="tableAddButton">
+    <button id='open-Add' class='btn btn-primary btn-md' data-title="Add" data-toggle="modal"
+            data-target="#add">
+     Add
+    </button>
+  </div>
+{% endblock %}
+
+
+{% block table %}
+  <table id="certificates" class="table table-striped table-centered">
+    <thead>
+    <tr class='element-row'>
+      <th data-field="id">ID</th>
+      <th data-field="domain">Name</th>
+      <th data-field="type">Type</th>
+      <th data-field="assigned_domains">Assigned Domains</th>
+    </tr>
+    </thead>
+  </table>
+{% endblock %}
+
+
+<!--
+  TODO:
+    this seems to be copied directly from endpointgroups
+    there will likely be conflicts now or in the future
+    this needs to be updated
+-->
+{% block edit_modal %}
+
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span
+      class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+  <h4 class="modal-title custom_align" id="Heading">Update Certificate
+  <button id="open-Delete" class="open-Delete btn btn-danger btn-xs" data-title="Delete"
+          data-toggle="modal" data-target="#delete"><span class="glyphicon glyphicon-trash"></span>
+  </button>
+  </h4>
+</div>
+
+<div class="modal-body">
+  <form id="editCertificateForm" action="#" method="POST" role="form" enctype="multipart/form-data">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+
+    <div class="form-group">
+      <input class="form-control" type="text" id="domain2" name="domain" placeholder="Domain name for the certificate"
+             autofocus="autofocus">
+    </div>
+    <div class="form-group">
+          <div id="certtypeoptions2" class="btn-group" data-toggle="buttons">
+            <label><input type="radio" name="certtype" id="certtype_generate2" value="generated" checked>
+            Generate
+            </label>
+            <label><input type="radio" name="certtype" id="certtype_upload2" value="uploaded">
+            Upload
+      </label>
+          </div>
+     </div>
+    <div id="generate2">
+      <div class="alert alert-warning pre-scrollable hide" id="terminalDiv2">
+          <strong>
+      Access this server via ssh and execute the command below.  Follow the instructions and upload the certificate<br><br>
+          </strong>
+    <pre><code class="bash" id="terminalCommand2">
+
+         </code></pre>
+        </div>
+      </div><!-- end of generate tab -->
+
+    <div id="uploaded2" class="form-group hide">
+
+        <input type="file" name="certandkey" multiple>
+
+    </div> <!-- end of upload tab -->
+
+    <div class="modal-footer ">
+      <button type="button" id="updateButton" class="btn btn-primary btn-lg" style="width: 100%;"><span
+          class="glyphicon glyphicon-ok-sign"></span> Update Certificate
+      </button>
+    </div>
+  </form>
+</div>
+
+{% endblock %}
+
+
+{% block add_modal %}
+
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span
+        class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+    <h4 class="modal-title custom_align" id="Heading">Add</h4>
+  </div>
+  <div class="modal-body">
+    <form id="addCertificateForm" action="#" method="POST" role="form" enctype="multipart/form-data">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+
+      <div class="form-group">
+        <input class="form-control" type="text" id="domain" name="domain" placeholder="Domain name for the certificate"
+               autofocus="autofocus">
+      </div>
+      <div class="form-check">
+	<input type="checkbox" class="form-check-input" id="replace_default_cert" name="replace_default_cert"  value="true" checked>
+	<label class="form-check-label" for="replace_default_cert">Replace the default certificate</label>
+      </div>
+      <div class="form-group">
+            <div id="certtypeoptions" class="btn-group" data-toggle="buttons">
+              <label><input type="radio" name="certtype" id="certtype_generate" value="generated">
+              Generate
+              </label>
+              <label><input type="radio" name="certtype" id="certtype_upload" value="uploaded" checked>
+              Upload
+	      </label>
+            </div>
+       </div>
+      <div id="generate">
+      	<div class="alert alert-warning pre-scrollable hide" id="terminalDiv">
+            <strong>
+		    Access this server via ssh and execute the command below.  Follow the instructions and upload the certificate<br><br>
+            </strong>
+	    <pre><code class="bash" id="terminalCommand">
+	    dsiprouter generatecert
+           </code></pre>
+          </div>
+        </div><!-- end of generate tab -->
+
+      <div id="uploaded" class="form-group hide">
+
+	  <label class="form-check-label" for="certandkey">Select certificate (.crt or .cert) and private key file (.key or .pem)</label>
+          <input type="file" id="certandkey" name="certandkey" multiple>
+
+      </div> <!-- end of upload tab -->
+
+      <div class="modal-footer ">
+        <button type="button" id="addButton" class="btn btn-primary btn-lg" style="width: 100%;"><span
+            class="glyphicon glyphicon-ok-sign"></span> Add Certifcate
+        </button>
+      </div>
+    </form>
+  </div>
+
+{% endblock %}
+
+
+{% block delete_modal %}
+
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span
+        class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+    <h4 class="modal-title custom_align" id="Heading">Delete this entry</h4>
+  </div>
+
+  <div class="modal-body">
+    <form action="/pbxdelete" method="POST" role="form">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+
+      <div class="form-group">
+        <input class="gwgroup form-control" type="hidden" name="gwgroup">
+        <input class="gwid form-control" type="hidden" name="gwid">
+        <input class="name form-control" type="hidden" name="name">
+      </div>
+
+      <div class="alert alert-danger"><span class="glyphicon glyphicon-warning-sign"></span> Are you sure you want
+        to delete this Certificate?
+      </div>
+
+      <div class="modal-footer ">
+        <button id="deleteButton" type="button" class="btn btn-success"><span
+            class="glyphicon glyphicon-ok-sign"></span> Yes
+        </button>
+        <button type="button" class="btn btn-default" data-dismiss="modal"><span
+            class="glyphicon glyphicon-remove"></span> No
+        </button>
+      </div>
+    </form>
+  </div>
+
+{% endblock %}
+
+{% block custom_js %}
+  {{ script_tag('jquery.tabledit') }}
+  {{ script_tag('certificates') }}
+{% endblock %}
