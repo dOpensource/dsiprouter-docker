@@ -22,6 +22,8 @@ services:
       - KAM_DB_PASS=kamailiorw
     depends_on: 
       - dsiprouter-mysql
+    command: "mkdir /var/run/mysqld"
+    command: "touch /var/run/mysqld/mysqld.sock"
     command: ["./docker/dsiprouter/wait-for-dsiprouter-mysql.sh","dsiprouter-mysql","python","dsiprouter.py","runserver"]
 
   dsiprouter-mysql:
