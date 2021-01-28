@@ -1,0 +1,29 @@
+{% from 'util.jinja2.html' import link_tag, script_tag, tracked_link %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>dSIPRouter {% block title %}{% endblock %}</title>
+
+  {{ link_tag('bootstrap') }}
+  {{ link_tag('main') }}
+
+  {% block custom_css %}
+  {% endblock %}
+
+</head>
+
+<body>
+
+  <div class="container">
+    {% block body %}
+    {% endblock %}
+  </div>
+
+  {{ script_tag('jquery') }}
+
+  {% block custom_js %}
+  {% endblock %}
+
+</body>
+</html>
