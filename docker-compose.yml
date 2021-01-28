@@ -8,7 +8,7 @@ services:
     volumes:
       - .:/opt/dsiprouter
     ports:
-      - "5000:5000"
+      - "5000"
     environment:
       - ENV=PROD
       - DSIP_USER=admin
@@ -30,7 +30,7 @@ services:
       - /tmp/dbdata:/var/lib/mysql
       - ./testing/sql/v0.60+ent:/docker-entrypoint-initdb.d/
     ports:
-      - "3306:3306"
+      - "3306"
     environment:
       - MYSQL_ALLOW_EMPTY_PASSWORD=yes
       - MYSQL_USER=kamailio
