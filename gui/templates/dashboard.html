@@ -1,0 +1,90 @@
+{% extends 'fullwidth_layout.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block custom_css %}
+  {{ link_tag('dashboard') }}
+{% endblock %}
+
+{% block body %}
+
+  <div class="wrapper-horizontal edge-centered children-align-inherit content-header">
+    <h2>Dashboard</h2>
+
+    {% if reloadstatus %}
+      <h3>Kamailio Reload: {{ reloadstatus }}</h3>
+    {% endif %}
+  </div>
+
+  <div class="content-section"> <!-- begin placeholders -->
+    <div class="col-xs-4 col-sm-4 placeholder">
+      <div class="dashboard-metric-label">Active SIP Messages</div>
+      <div id="dashboard_current_calls" class="dashboard-metric"></div>
+    </div>
+    <div class="col-xs-4 col-sm-4 placeholder">
+      <div class="dashboard-metric-label">SIP Messages in Queue</div>
+      <div id="dashboard_calls_inqueue" class="dashboard-metric"></div>
+    </div>
+    <div class="col-xs-4 col-sm-4 placeholder">
+      <div class="dashboard-metric-label">Total SIP Messages</div>
+      <div id="dashboard_total_calls_processed" class="dashboard-metric"></div>
+    </div>
+  </div> <!-- end placeholders -->
+
+  <div class="content-section"> <!-- begin dashboard info -->
+    <div class="col-xs-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">Documentation</div>
+        <div class="panel-body">
+          <ul>
+            <li><a href="/docs/user/index.html" target="_blank">User Documentation</a></li>
+            <li><a href="/docs/dev/index.html" target="_blank">Developer Documentation</a></li>
+            <li><a href="/docs/routes/index.html" target="_blank">Routes Documentation</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-4">
+      <div class=" panel  panel-default">
+        <div class="panel-heading">Training</div>
+        <div class="panel-body">
+          <ul>
+            <li><a href="https://dopensource.com/product/dsiprouter-admin-course/" target="_blank">dSIPRouter 1 Day
+              Admin Course</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">Support</div>
+        <div class="panel-body">
+          <ul>
+            <li>Paid Support
+              <ul>
+                <li><a href="https://dopensource.com/dsiprouter-core/" target="_blank">Annual Subscription</a></li>
+                <li><a href="https://dopensource.com/dsiprouter-annual-subscriptions/" target="_blank">Annual Microsoft Teams Add-on Subscription</a></li>
+              </ul>
+            </li>
+            <li>Free Support
+              <ul>
+                <li><a href="https://groups.google.com/forum/#!forum/dsiprouter" target="_blank">User Forum</a></li>
+              </ul>
+            </li>
+            <li>Kamailio Consultants Directory
+              <ul>
+                <li><a href="https://www.kamailio.org/w/business-directory/" target="_black">Kamailio Business
+                  Directory</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div> <!-- end dashboard info -->
+
+{% endblock %}
+
+{% block custom_js %}
+  {{ script_tag('dashboard') }}
+{% endblock %}
