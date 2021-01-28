@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import os, re, json, subprocess, urllib.parse, glob, datetime, csv, logging, signal, bjoern
+import os, re, json, subprocess, urllib.parse, glob, datetime, csv, logging, signal
 from functools import wraps
 from copy import copy
 from collections import OrderedDict
