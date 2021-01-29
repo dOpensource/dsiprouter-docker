@@ -18,7 +18,7 @@ COPY ../../ /opt/dsiprouter/
 COPY kamailio_dsiprouter.cfg /etc/kamailio
 
 COPY ./configureKam.sh/ /configureKam.sh
-RUN chmod +x /configureKam/*.sh
+RUN chmod +x /configureKam.sh/*.sh
 
 
 EXPOSE ${SIP_PORT}:${SIP_PORT}
