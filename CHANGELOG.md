@@ -5,7 +5,8 @@
 
 [//]: # (END_SECTION HEADER)
 [//]: # (START_SECTION COMMITS
-7b8e9a9cb5747b3ffa8ec9d8896fafb15c0d4182
+b8226a71af4194479628547b0fbb0b64f7f79a05
+c8f04fa9944e0668bae8c99fd75ff7cc9d324f10
 388d8aa47a3ec3d7a89054aaea54a6e75b535998
 840bf2551b3f80e94eb39f5c8f8bbec80c2c4bb3
 e0b6a73488ed8b316435a5283a07a27af3f135ec
@@ -180,10 +181,25 @@ b7a150c5e90d9e9d4a75854ba2f6df18871cf966
 6e79f0a5529496b076763781358394e926eb7fb8
 d79a799eef9d5cabd34ec5d0b17ce12b30e66316
 END_SECTION COMMITS)
-[//]: # (START_SECTION 7b8e9a9cb5747b3ffa8ec9d8896fafb15c0d4182)
+[//]: # (START_SECTION b8226a71af4194479628547b0fbb0b64f7f79a05)
+### add mysql dump of current DB and update mysql docker file
+
+> Commit: [b8226a71af4194479628547b0fbb0b64f7f79a05](https://github.com/dOpensource/dsiprouter-docker/commit/b8226a71af4194479628547b0fbb0b64f7f79a05)  
+> Date: Fri, 29 Jan 2021 14:01:13 -0500  
+> Author: Tyler Moore (tmoore@goflyball.com)  
+> Committer: Tyler Moore (tmoore@goflyball.com)  
+> Signed: Tyler Moore (devopsec) <tmoore@goflyball.com>  
+
+
+
+
+---
+
+[//]: # (END_SECTION b8226a71af4194479628547b0fbb0b64f7f79a05)
+[//]: # (START_SECTION c8f04fa9944e0668bae8c99fd75ff7cc9d324f10)
 ### add current work on docker files
 
-> Commit: [7b8e9a9cb5747b3ffa8ec9d8896fafb15c0d4182](https://github.com/dOpensource/dsiprouter-docker/commit/7b8e9a9cb5747b3ffa8ec9d8896fafb15c0d4182)  
+> Commit: [c8f04fa9944e0668bae8c99fd75ff7cc9d324f10](https://github.com/dOpensource/dsiprouter-docker/commit/c8f04fa9944e0668bae8c99fd75ff7cc9d324f10)  
 > Date: Fri, 29 Jan 2021 13:34:32 -0500  
 > Author: Tyler Moore (tmoore@goflyball.com)  
 > Committer: Tyler Moore (tmoore@goflyball.com)  
@@ -194,7 +210,7 @@ END_SECTION COMMITS)
 
 ---
 
-[//]: # (END_SECTION 7b8e9a9cb5747b3ffa8ec9d8896fafb15c0d4182)
+[//]: # (END_SECTION c8f04fa9944e0668bae8c99fd75ff7cc9d324f10)
 [//]: # (START_SECTION 388d8aa47a3ec3d7a89054aaea54a6e75b535998)
 ### Add Proper Structure For Docker Containers
 
