@@ -22,7 +22,7 @@ services:
       - KAM_DB_PASS=kamailiorw
     depends_on: 
       - dsiprouter-mysql
-    command: ["./docker/dsiprouter/wait-for-dsiprouter-mysql.sh","dsiprouter-mysql","python","dsiprouter.py","runserver"]
+    command: ["dsiprouter-mysql","python","dsiprouter.py","runserver"]
 
   dsiprouter-mysql:
     image: mysql:5.7
