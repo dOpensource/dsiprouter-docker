@@ -3,11 +3,11 @@ MAINTAINER Richard Bolaji <richard@goflyball.com>
 # debian kamailio build stage
 FROM kamailio/kamailio:5.3.8-trusty AS kamailio
 
-ENV KAM_DB_HOST='localhost'
-ENV KAM_DB_PORT='3306'
-ENV KAM_DB_NAME='kamailio'
-ENV KAM_DB_USER='kamailio'
-ENV KAM_DB_PASS='kamailiorw'
+ENV KAM_DB_HOST="${KAM_DB_HOST}"
+ENV KAM_DB_PORT="${KAM_DB_PORT"
+ENV KAM_DB_NAME="${KAM_DB_NAME}"
+ENV KAM_DB_USER="${KAM_DB_USER}"
+ENV KAM_DB_PASS="${KAM_DB_PASS}"
 ENV SIP_PORT='5060'
 ENV SIPS_PORT='5061'
 ENV DMQ_PORT='5090'
