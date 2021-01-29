@@ -19,11 +19,11 @@ RUN apt update && \
     rm -rf /var/lib/apt/lists/*
 
 # Copy in scripts for certbot
-COPY ./scripts/ /scripts
-RUN chmod +x /scripts/*.sh
+COPY ./certbotScripts/ /certbotScripts
+RUN chmod +x /certbotScripts/*.sh
 
 # Add /scripts/startup directory to source more startup scripts
-RUN mkdir -p /scripts/startup
+RUN mkdir -p /certbotScripts/startup
 
 # Copy in default nginx configuration (which just forwards ACME requests to
 # certbot, or redirects to HTTPS, but has no HTTPS configurations by default).
@@ -31,4 +31,4 @@ RUN rm -f /etc/nginx/conf.d/*
 COPY nginx_conf.d/ /etc/nginx/conf.d/
 
 ENTRYPOINT []
-CMD ["/bin/bash", "/scripts/entrypoint.sh"]
+CMD ["/bin/bash", "/certbotScripts/configureSSL.sh"]
