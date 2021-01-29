@@ -17,6 +17,10 @@ COPY ./resources/ /opt/resources/
 COPY ../../ /opt/dsiprouter/
 COPY kamailio_dsiprouter.cfg /etc/kamailio
 
+COPY ./configureKam.sh/ /configureKam.sh
+RUN chmod +x /configureKam/*.sh
+
+
 EXPOSE ${SIP_PORT}:${SIP_PORT}
 EXPOSE ${SIPS_PORT}:${SIPS_PORT}
 EXPOSE ${DMQ_PORT}:${DMQ_PORT}
