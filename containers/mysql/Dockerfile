@@ -1,11 +1,14 @@
-FROM mariadb:latest
-
 MAINTAINER Richard Bolaji <richard@goflyball.com>
 
-RUN apt-get update -y && \
-    apt-get upgrade -y
+# debian mysql build stage
+FROM mariadb:latest AS mysql
 
-ADD ../resources/ /opt/resources/
-WORKDIR /opt/resources/
-RUN mysql < /opt/resources/tmp.sql
+COPY ./resources/ /opt/resources/
+
+RUN apt-get update -y && \
+    apt-get upgrade -y && \
+    mysql < /opt/resources/tmp.sql
+
 EXPOSE 3306:3306
+
+CMD systemctl restart kamailio

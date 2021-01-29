@@ -1,6 +1,7 @@
-FROM nginx
-
 MAINTAINER Richard Bolaji <richard@goflyball.com>
+
+# nginx certbot build stage
+FROM nginx AS certbot
 
 VOLUME /etc/letsencrypt
 EXPOSE 80

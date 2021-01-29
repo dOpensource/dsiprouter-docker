@@ -5,7 +5,8 @@
 
 [//]: # (END_SECTION HEADER)
 [//]: # (START_SECTION COMMITS
-7273926d2e4105d4b0e7622f7fa74c392d2da575
+7b8e9a9cb5747b3ffa8ec9d8896fafb15c0d4182
+388d8aa47a3ec3d7a89054aaea54a6e75b535998
 840bf2551b3f80e94eb39f5c8f8bbec80c2c4bb3
 e0b6a73488ed8b316435a5283a07a27af3f135ec
 e6a1f7a9fc8fb22e370e8e3b8c98ab887daffc86
@@ -179,10 +180,25 @@ b7a150c5e90d9e9d4a75854ba2f6df18871cf966
 6e79f0a5529496b076763781358394e926eb7fb8
 d79a799eef9d5cabd34ec5d0b17ce12b30e66316
 END_SECTION COMMITS)
-[//]: # (START_SECTION 7273926d2e4105d4b0e7622f7fa74c392d2da575)
+[//]: # (START_SECTION 7b8e9a9cb5747b3ffa8ec9d8896fafb15c0d4182)
+### add current work on docker files
+
+> Commit: [7b8e9a9cb5747b3ffa8ec9d8896fafb15c0d4182](https://github.com/dOpensource/dsiprouter-docker/commit/7b8e9a9cb5747b3ffa8ec9d8896fafb15c0d4182)  
+> Date: Fri, 29 Jan 2021 13:34:32 -0500  
+> Author: Tyler Moore (tmoore@goflyball.com)  
+> Committer: Tyler Moore (tmoore@goflyball.com)  
+> Signed: Tyler Moore (devopsec) <tmoore@goflyball.com>  
+
+
+
+
+---
+
+[//]: # (END_SECTION 7b8e9a9cb5747b3ffa8ec9d8896fafb15c0d4182)
+[//]: # (START_SECTION 388d8aa47a3ec3d7a89054aaea54a6e75b535998)
 ### Add Proper Structure For Docker Containers
 
-> Commit: [7273926d2e4105d4b0e7622f7fa74c392d2da575](https://github.com/dOpensource/dsiprouter-docker/commit/7273926d2e4105d4b0e7622f7fa74c392d2da575)  
+> Commit: [388d8aa47a3ec3d7a89054aaea54a6e75b535998](https://github.com/dOpensource/dsiprouter-docker/commit/388d8aa47a3ec3d7a89054aaea54a6e75b535998)  
 > Date: Fri, 29 Jan 2021 10:52:28 -0500  
 > Author: Tyler Moore (tmoore@goflyball.com)  
 > Committer: Tyler Moore (tmoore@goflyball.com)  
@@ -193,7 +209,7 @@ END_SECTION COMMITS)
 
 ---
 
-[//]: # (END_SECTION 7273926d2e4105d4b0e7622f7fa74c392d2da575)
+[//]: # (END_SECTION 388d8aa47a3ec3d7a89054aaea54a6e75b535998)
 [//]: # (START_SECTION 840bf2551b3f80e94eb39f5c8f8bbec80c2c4bb3)
 ### Create overrides.js
 
