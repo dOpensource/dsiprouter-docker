@@ -41,6 +41,22 @@ services:
       timeout: 45s
       retries: 5
       
+  kamailio:
+    image: kamailio/kamailio:5.3.8-trusty
+    restart: unless-stopped
+    container_name: kamailio
+    volumes:
+      - ./kamailio:/etc/kamailio
+    ports:
+      - 5060:5060
+      - 5061:5061
+    depends_on:
+      - mariadb
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
+
   frontend:
       restart: unless-stopped
       image: staticfloat/nginx-certbot
