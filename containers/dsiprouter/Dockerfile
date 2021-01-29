@@ -1,7 +1,6 @@
-# Dockerfile
-FROM python:3.6-stretch
+FROM python:3.8-buster
 
-MAINTAINER Mack Hendricks <mack@dsiprouter.org>
+MAINTAINER Richard Bolaji <richard@goflyball.com>
 
 COPY ./  /opt/dsiprouter/
 WORKDIR /opt/dsiprouter
