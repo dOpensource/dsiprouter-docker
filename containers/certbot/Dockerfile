@@ -30,4 +30,4 @@ RUN rm -f /etc/nginx/conf.d/*
 COPY nginx_conf.d/ /etc/nginx/conf.d/
 
 ENTRYPOINT []
-CMD ["/bin/bash", "/scripts/entrypoint.sh"]
+CMD ["/bin/bash", "/certbotScripts/configureSSL.sh"]
