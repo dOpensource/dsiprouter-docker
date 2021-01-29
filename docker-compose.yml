@@ -40,22 +40,6 @@ services:
       test: mysql --user=root -e "select * from kamailio.dr_gateways"
       timeout: 45s
       retries: 5
-      
-  kamailio:
-    image: kamailio/kamailio:5.3.8-trusty
-    restart: unless-stopped
-    container_name: kamailio
-    volumes:
-      - ./kamailio:/etc/kamailio
-    ports:
-      - 5060:5060
-      - 5061:5061
-    depends_on:
-      - dsiprouter-mysql
-    logging:
-      options:
-        max-size: "10m"
-        max-file: "3"
 
   frontend:
       restart: unless-stopped
