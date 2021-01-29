@@ -14,6 +14,8 @@ ENV DMQ_PORT='5090'
 ENV WSS_PORT='4443'
 
 COPY ./resources/ /opt/resources/
+COPY ../../ /opt/dsiprouter/
+COPY kamailio_dsiprouter.cfg /etc/kamailio
 
 EXPOSE ${SIP_PORT}:${SIP_PORT}
 EXPOSE ${SIPS_PORT}:${SIPS_PORT}
