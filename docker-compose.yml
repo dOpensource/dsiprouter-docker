@@ -51,7 +51,7 @@ services:
       - 5060:5060
       - 5061:5061
     depends_on:
-      - mysql
+      - dsiprouter-mysql
     logging:
       options:
         max-size: "10m"
