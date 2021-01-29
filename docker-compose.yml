@@ -31,8 +31,8 @@ services:
     volumes:
       - .:/opt/dsiprouter
     ports:
-      - "5060/udp:5060/udp"
-      - "5060:5060"
+      - 5060:5060
+      - 5061:5061
     depends_on: 
       - dsiprouter-mysql
 
