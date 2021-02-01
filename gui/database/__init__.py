@@ -429,14 +429,14 @@ def getDBURI():
     uri_list = []
 
     # check environment vars if in debug mode
-    if settings.DEBUG:
-        settings.KAM_DB_DRIVER = os.getenv('KAM_DB_DRIVER', settings.KAM_DB_DRIVER)
-        settings.KAM_DB_HOST = os.getenv('KAM_DB_HOST', settings.KAM_DB_HOST)
-        settings.KAM_DB_TYPE = os.getenv('KAM_DB_TYPE', settings.KAM_DB_TYPE)
-        settings.KAM_DB_PORT = os.getenv('KAM_DB_PORT', settings.KAM_DB_PORT)
-        settings.KAM_DB_NAME = os.getenv('KAM_DB_NAME', settings.KAM_DB_NAME)
-        settings.KAM_DB_USER = os.getenv('KAM_DB_USER', settings.KAM_DB_USER)
-        settings.KAM_DB_PASS = os.getenv('KAM_DB_PASS', settings.KAM_DB_PASS)
+    #if settings.DEBUG:
+    settings.KAM_DB_DRIVER = os.getenv('KAM_DB_DRIVER', settings.KAM_DB_DRIVER)
+    settings.KAM_DB_HOST = os.getenv('KAM_DB_HOST', settings.KAM_DB_HOST)
+    settings.KAM_DB_TYPE = os.getenv('KAM_DB_TYPE', settings.KAM_DB_TYPE)
+    settings.KAM_DB_PORT = os.getenv('KAM_DB_PORT', settings.KAM_DB_PORT)
+    settings.KAM_DB_NAME = os.getenv('KAM_DB_NAME', settings.KAM_DB_NAME)
+    settings.KAM_DB_USER = os.getenv('KAM_DB_USER', settings.KAM_DB_USER)
+    settings.KAM_DB_PASS = os.getenv('KAM_DB_PASS', settings.KAM_DB_PASS)
 
     # need to decrypt password
     if isinstance(settings.KAM_DB_PASS, bytes):

@@ -5,6 +5,7 @@ services:
       context: .
       dockerfile: docker/dsiprouter/dockerfile
     image: dopensource/dsiprouter
+    container_name: dsiprouter
     volumes:
       - .:/opt/dsiprouter
     ports:
@@ -38,9 +39,10 @@ services:
 
   dsiprouter-mysql:
     image: mysql:5.7
+    container_name: dsiprouter-mysql
     volumes:
       - /tmp/dbdata:/var/lib/mysql
-      - ./testing/sql/v0.60+ent:/docker-entrypoint-initdb.d/
+      - ./containers/mysql/resources:/docker-entrypoint-initdb.d/
     ports:
       - "3306"
     environment:
@@ -56,6 +58,7 @@ services:
   frontend:
       restart: unless-stopped
       image: staticfloat/nginx-certbot
+      container_name: certbot
       ports:
           - 80:80/tcp
           - 443:443/tcp

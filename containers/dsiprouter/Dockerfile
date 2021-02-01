@@ -42,6 +42,8 @@ ENV LOAD_SETTINGS_FROM='file'
 
 COPY ../../  /opt/dsiprouter/
 COPY ./resources/ /opt/resources/
+RUN mkdir /etc/dsiprouter
+COPY ../../gui/privkey /etc/dsiprouter/privkey
 RUN pip install -r /opt/dsiprouter/gui/requirements.txt
 
 export DSIP_CONFIG_FILE="./gui/settings.py"

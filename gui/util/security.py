@@ -160,7 +160,8 @@ class AES_CTR():
     def decrypt(byte_string, key_file=settings.DSIP_PRIV_KEY):
         if isinstance(byte_string, str):
             byte_string = byte_string.encode('utf-8')
-        byte_string = binascii.unhexlify(byte_string)
+        else:
+            byte_string = binascii.unhexlify(byte_string)
 
         with open(key_file, 'rb') as f:
             key = f.read(AES_CTR.KEY_SIZE)
