@@ -15,7 +15,7 @@ DSIP_PASSWORD = 'admin'
 DSIP_API_TOKEN = 'admin'
 DSIP_API_PROTO = 'https'
 DSIP_API_PORT = 5000
-DSIP_PRIV_KEY = '/etc/dsiprouter/privkey'
+DSIP_PRIV_KEY = './gui/privkey'
 DSIP_PID_FILE = '/var/run/dsiprouter/dsiprouter.pid'
 DSIP_UNIX_SOCK = '/var/run/dsiprouter/dsiprouter.sock'
 DSIP_IPC_SOCK = '/var/run/dsiprouter/ipc.sock'
@@ -102,7 +102,7 @@ FLOWROUTE_API_ROOT_URL = 'https://api.flowroute.com/v2'
 # updated dynamically! These values will be overwritten
 INTERNAL_IP_ADDR = '178.128.233.182'
 INTERNAL_IP_NET = '178.128.233.*'
-EXTERNAL_IP_ADDR = '178.128.233.182'
+EXTERNAL_IP_ADDR = '0.0.0.0'
 EXTERNAL_FQDN = 'sip.dsiprouter.org'
 
 # upload folder for files

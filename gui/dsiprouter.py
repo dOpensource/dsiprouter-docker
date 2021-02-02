@@ -2223,9 +2223,9 @@ def initApp(flask_app):
     # start the Flask App server
     if os.path.exists(settings.DSIP_UNIX_SOCK):
         os.remove(settings.DSIP_UNIX_SOCK)
-    with open(settings.DSIP_PID_FILE, 'w') as pidfd:
-        pidfd.write(str(os.getpid()))
-    bjoern.run(flask_app, 'unix:{}'.format(settings.DSIP_UNIX_SOCK), reuse_port=True)
+    #with open(settings.DSIP_PID_FILE, 'w') as pidfd:
+        #pidfd.write(str(os.getpid()))
+    #bjoern.run(flask_app, 'unix:{}'.format(settings.DSIP_UNIX_SOCK), reuse_port=True)
 
 def teardown():
     try:

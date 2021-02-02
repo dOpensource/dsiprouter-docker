@@ -4,7 +4,7 @@ from util.security import AES_CTR
 import settings
 
 # create server to share data over sockets
-def createSettingsManager(shared_settings, address=settings.DSIP_IPC_SOCK, authkey=None):
+def createSettingsManager(shared_settings, address='0.0.0.0', authkey=None):
     if authkey is None:
         authkey = AES_CTR.decrypt(settings.DSIP_IPC_PASS)
 
