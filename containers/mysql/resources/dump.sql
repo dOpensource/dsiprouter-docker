@@ -1385,7 +1385,7 @@ CREATE TABLE `dsip_settings` (
   `FLOWROUTE_API_ROOT_URL` varchar(255) NOT NULL DEFAULT 'https://api.flowroute.com/v2',
   `INTERNAL_IP_ADDR` varchar(255) NOT NULL DEFAULT '192.168.0.1',
   `INTERNAL_IP_NET` varchar(255) NOT NULL DEFAULT '192.168.0.*',
-  `EXTERNAL_IP_ADDR` varchar(255) NOT NULL DEFAULT '0.0.0.0',
+  `EXTERNAL_IP_ADDR` varchar(255) NOT NULL DEFAULT '1.1.1.1',
   `EXTERNAL_FQDN` varchar(255) NOT NULL DEFAULT 'sip.dsiprouter.org',
   `UPLOAD_FOLDER` varchar(255) NOT NULL DEFAULT '/tmp',
   `CLOUD_PLATFORM` varchar(16) NOT NULL DEFAULT '',

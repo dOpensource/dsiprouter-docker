@@ -102,7 +102,7 @@ FLOWROUTE_API_ROOT_URL = 'https://api.flowroute.com/v2'
 # updated dynamically! These values will be overwritten
 INTERNAL_IP_ADDR = '178.128.233.182'
 INTERNAL_IP_NET = '178.128.233.*'
-EXTERNAL_IP_ADDR = '0.0.0.0'
+EXTERNAL_IP_ADDR = '178.128.233.182'
 EXTERNAL_FQDN = 'sip.dsiprouter.org'
 
 # upload folder for files

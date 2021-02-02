@@ -223,7 +223,7 @@ def getEndpointLease():
         auth_domain = settings.DOMAIN
 
         # Set some defaults
-        host_addr = '0.0.0.0'
+        host_addr = ''
         strip = ''
         prefix = ''
 
