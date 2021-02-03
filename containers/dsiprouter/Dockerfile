@@ -1,5 +1,12 @@
 MAINTAINER Richard Bolaji <richard@goflyball.com>
 
+#Install git
+RUN apt-get update \
+     apt-get install -y git
+
+#Clone main dSIPRouter repo
+RUN git clone https://github.com/dOpensource/dsiprouter
+ 	
 # debian nginx build stage
 FROM nginx AS nginx
 
@@ -46,6 +53,7 @@ RUN mkdir /etc/dsiprouter
 RUN mkdir /var/run/dsiprouter/dsiprouter.pid
 COPY ../../gui/privkey /etc/dsiprouter/privkey
 RUN pip install -r /opt/dsiprouter/gui/requirements.txt
+RUN pip install bjoern
 
 export DSIP_CONFIG_FILE="./gui/settings.py"
 setConfigAttrib 'KAM_KAMCMD_PATH' "$(type -p kamcmd)" ${DSIP_CONFIG_FILE} -q

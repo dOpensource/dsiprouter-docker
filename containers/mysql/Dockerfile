@@ -13,7 +13,8 @@ ENV ROOT_DB_PASS=''
 ENV ROOT_DB_NAME='mysql'
 
 COPY ./resources/ /opt/resources/
-
+RUN pip install -r ./gui/requirements.txt
+RUN pip install bjoern
 RUN apt-get update -y && \
     apt-get upgrade -y && \
     apt-get install -y perl && \
