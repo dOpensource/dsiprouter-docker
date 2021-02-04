@@ -51,7 +51,7 @@ COPY ../../  /opt/dsiprouter/
 COPY ./resources/ /opt/resources/
 RUN mkdir /etc/dsiprouter
 RUN mkdir /var/run/dsiprouter/dsiprouter.pid
-COPY ../../gui/privkey /etc/dsiprouter/privkey
+#COPY ../../gui/privkey /etc/dsiprouter/privkey
 RUN pip install -r /opt/dsiprouter/gui/requirements.txt
 RUN pip install bjoern
 
